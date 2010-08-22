@@ -54,13 +54,11 @@ Your controller might look something like this:
 # app/controllers/fluther_controller.rb
 class FlutherController < ApplicationController
   include SimpleFluther::ControllerMethods
-
-  before_filter   :make_fluther_request, :only => :index
-
+  before_filter :make_fluther_request, :only => :index
+  
   def index
   end
 end
-
 </pre>
 
 <pre>
