@@ -50,6 +50,7 @@ map.fluther '/qna/*_', :controller => 'fluther', :action => 'index'
 </pre>
 
 Your controller might look something like this:
+
 <pre>
 # app/controllers/fluther_controller.rb
 class FlutherController < ApplicationController
