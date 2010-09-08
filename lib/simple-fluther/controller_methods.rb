@@ -3,8 +3,15 @@ require 'em-http-request'
 module SimpleFluther
   module ControllerMethods
     def make_fluther_request
-      setup_fluther_user
-      return exec_request
+      if request.path.ends_with?('/')
+        setup_fluther_user
+        return exec_request
+      else
+        path_with_slash = request.path + '/'
+        Rails.logger.debug "Found no trailing slash, redirecing to #{path_with_slash}"
+        redirect_to path_with_slash, :status => 301
+        return false
+      end
     end
     
     def setup_fluther_user
@@ -40,10 +47,9 @@ module SimpleFluther
 
       path = request.path.sub( %r{^#{SimpleFluther::Config.prefix}}, '' )
       path = '/' + path  unless path.starts_with?('/')
-      path = path + '/' unless path.ends_with?('/')
       url = "#{request.scheme}://#{SimpleFluther::Config.fluther_host}#{path}"
 
-      Rails.logger.debug request.request_method
+      Rails.logger.debug "#{request.request_method} for #{request.path}"
       Rails.logger.debug url
       Rails.logger.debug options
 
@@ -73,7 +79,7 @@ module SimpleFluther
         redirect_to fluther.response_header['LOCATION'], :status => fluther.response_header.status
         false
       elsif request.xhr? || (content_type != 'text/html')
-        Rails.logger.debug "AJAX?"
+        Rails.logger.debug "AJAX? Rendering..."
         render :text => fluther.response, :layout => false
 #        [ fluther.response_header.status, {'Content-Type' => type_header}, [fluther.response] ]
         true

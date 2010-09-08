@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{simple-fluther}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Chen"]
-  s.date = %q{2010-08-22}
-  s.description = %q{Modified version of original fluther gem for integrating into Rails.}
+  s.date = %q{2010-09-08}
+  s.description = %q{Ruby interface to the Fluther discussion system}
   s.email = %q{justin@menuism.com}
   s.extra_rdoc_files = [
     "README.textile"
@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Ruby interface to the Fluther discussion system}
+  s.summary = %q{Modified version of original fluther gem for integrating into Rails.}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
