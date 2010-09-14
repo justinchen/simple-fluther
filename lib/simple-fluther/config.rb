@@ -33,4 +33,8 @@ module SimpleFluther
     end
     
   end
+  
+  def self.topic_path(t)
+    "#{SimpleFluther::Config.prefix}/topics/#{t}/"
+  end
 end
