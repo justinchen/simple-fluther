@@ -35,6 +35,7 @@ module SimpleFluther
   end
   
   def self.topic_path(t)
+    t.gsub!(' ', '_')
     "#{SimpleFluther::Config.prefix}/topics/#{t}/"
   end
 end
