@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{simple-fluther}
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Chen"]
-  s.date = %q{2010-10-19}
+  s.date = %q{2010-10-21}
   s.description = %q{Ruby interface to the Fluther discussion system}
   s.email = %q{justin@menuism.com}
   s.extra_rdoc_files = [
