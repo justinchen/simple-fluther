@@ -86,6 +86,7 @@ module SimpleFluther
       else
         fluther.response.html_safe  if fluther.response.respond_to?(:html_safe)
         request.env['fluther.response'] = fluther.response
+        request.env['fluther.status'] = fluther.response_header.status
         request.env['fluther.title']  = fluther.response_header['FLUTHER_TITLE']  if fluther.response_header['FLUTHER_TITLE']
         request.env['fluther.header'] = fluther.response_header['FLUTHER_HEADER']  if fluther.response_header['FLUTHER_HEADER']
 #        @app.call request.env
