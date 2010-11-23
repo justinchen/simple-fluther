@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{simple-fluther}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Chen"]
-  s.date = %q{2010-11-11}
+  s.date = %q{2010-11-23}
   s.description = %q{Ruby interface to the Fluther discussion system}
   s.email = %q{justin@menuism.com}
   s.extra_rdoc_files = [
@@ -20,7 +20,8 @@ Gem::Specification.new do |s|
      "README.textile",
      "lib/simple-fluther.rb",
      "lib/simple-fluther/config.rb",
-     "lib/simple-fluther/controller_methods.rb"
+     "lib/simple-fluther/controller_methods.rb",
+     "lib/simple-fluther/feeds.rb"
   ]
   s.homepage = %q{http://github.com/justinchen/simple-fluther}
   s.rdoc_options = ["--charset=UTF-8"]

@@ -33,7 +33,7 @@ module SimpleFluther
     end
     
   end
-  
+
   def self.topic_path(t)
     t.downcase!
     t.gsub!(' ', '_')

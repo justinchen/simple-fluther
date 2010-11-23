@@ -36,7 +36,7 @@ module SimpleFluther
         :redirects => 0,
         :timeout => 10,
         :head => {
-          'User-Agent' => "Fluther Federated Client #{SimpleFluther::ClientVersion} (Ruby)",
+          'User-Agent' => SimpleFluther::UserAgent,
           'X-Forwarded-For' => request.env['REMOTE_ADDR'],
           'X-Forwarded-Host' => request.env['HTTP_HOST'],
           'X-Forwarded-User-Agent' => request.user_agent
